@@ -4,18 +4,18 @@
 set nocompatible
 filetype off
 
-set rtp+=~/vimfiles/bundle/Vundle.vim
+set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
-call vundle#begin()
+call vundle#begin(path)
 
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim=repeat'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'kien/cntrlp.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'svermeulen/vim-easyclip'
 
 call vundle#end()
@@ -23,10 +23,6 @@ filetype plugin indent on
 " }}}
 
 language messages en
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
 set showcmd
 set showmode
 set backspace=indent,eol,start
