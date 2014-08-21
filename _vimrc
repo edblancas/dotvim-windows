@@ -89,6 +89,8 @@ let g:ctrlp_custom_ignore = {
 \ }
 let g:ctrlp_map = ''
 let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_extensions = ['bookmarkdir']
+let g:ctrlp_working_path_mode = 0
 
 " EasyClip {{{2
 nmap <silent> gs <plug>SubstituteOverMotionMap
