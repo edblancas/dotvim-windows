@@ -47,6 +47,10 @@ set cul
 set encoding=utf-8
 "set colorcolumn=100
 
+if has('gui_running')
+	set guifont=Consolas:h11
+endif
+
 " Mappings {{{1
 " Override defaults {{{2
 let mapleader = ","
