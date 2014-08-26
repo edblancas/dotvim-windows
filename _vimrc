@@ -51,6 +51,9 @@ if has('gui_running')
 	set guifont=Consolas:h11
 endif
 
+" Para que inicie el pwd en ~
+cd ~
+
 " Mappings {{{1
 " Override defaults {{{2
 let mapleader = ","
