@@ -45,7 +45,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-30.(%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]%)\ %P
+set statusline=[%n]\ %f\ %m%y%r%h%w\ %{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 hi StatusLine gui=bold guibg=Black guifg=White
 hi StatusLineNC gui=bold guibg=DarkGray guifg=White
 

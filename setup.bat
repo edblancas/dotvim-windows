@@ -1,5 +1,5 @@
 :: Init submodule git Vundle.vim
-git submodule init
+git submodule update --init
 
 :: mklink solo esta disponible de Windows7+
 :: Make symlink vimfiles
