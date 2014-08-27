@@ -23,20 +23,14 @@ filetype plugin indent on
 " }}}
 
 language messages en
-set showcmd
 set showmode
-set backspace=indent,eol,start
 set hidden
-set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 set ignorecase
 set smartcase
 set number
-set ruler
-set incsearch
 set hlsearch
 set wrap
-set scrolloff=3
 set nobackup
 set nowritebackup
 set noswapfile
@@ -46,10 +40,6 @@ set pastetoggle=<F2>
 set cul
 set encoding=utf-8
 "set colorcolumn=100
-
-if has('gui_running')
-	set guifont=Consolas:h11
-endif
 
 " Para que inicie el pwd en ~
 cd ~
@@ -107,3 +97,4 @@ let g:EasyClipUseCutDefaults = 0
 nmap x <Plug>MoveMotionPlug
 xmap x <Plug>MoveMotionXPlug
 nmap xx <Plug>MoveMotionLinePlug
+

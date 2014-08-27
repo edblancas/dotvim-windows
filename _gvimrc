@@ -1,0 +1,9 @@
+" Sin scrollbars
+set guioptions-=rL
+" Sin toolbar
+set guioptions-=T
+
+set lines=999
+set columns=9999
+
+set guifont=Consolas:h11
