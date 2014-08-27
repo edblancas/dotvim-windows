@@ -54,7 +54,8 @@ set softtabstop=4
 set formatoptions-=t
 
 set pastetoggle=<F2>
-set cul
+nnoremap <silent> <F2> :set invpaste paste?<CR>
+set cursorline
 set encoding=utf-8
 "set colorcolumn=100
 
@@ -82,6 +83,15 @@ map <Leader>D :bd!<CR>
 map <Leader>W :w \| bd<CR>
 map <Leader>h :hide<CR>
 
+" Visual line repeat {{{2 
+xnoremap . :normal .<CR> 
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR> 
+ 
+function! ExecuteMacroOverVisualRange() 
+  echo "@".getcmdline() 
+  execute ":'<,'>normal @".nr2char(getchar()) 
+endfunction 
+
 " Smash Escape {{{2
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -105,6 +115,20 @@ let g:ctrlp_map = ''
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['bookmarkdir']
 let g:ctrlp_working_path_mode = 0
+
+" Tabular {{{2
+" Invoke by <leader>= alignment-character 
+nnoremap <silent> <leader>= :call g:Tabular(1)<CR> 
+xnoremap <silent> <leader>= :call g:Tabular(0)<CR> 
+function! g:Tabular(ignore_range) range 
+    let c = getchar() 
+    let c = nr2char(c) 
+    if a:ignore_range == 0 
+        exec printf('%d,%dTabularize /%s', a:firstline, a:lastline, c) 
+    else 
+        exec printf('Tabularize /%s', c) 
+    endif 
+endfunction 
 
 " EasyClip {{{2
 nmap <silent> gs <plug>SubstituteOverMotionMap
