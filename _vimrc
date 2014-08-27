@@ -10,13 +10,23 @@ call vundle#begin(path)
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Raimondi/delimitMate'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'godlygeek/tabular'
+Plugin 'chrisbra/NrrwRgn'
+
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-indent'
+
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,7 +45,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 set laststatus=2
-set statusline=[%n]\ %f\ %y%m%r%h%w%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-20.([%l,%c%V]\ [%L,%p%%]%)\ %P
+set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-30.(%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]%)\ %P
+hi StatusLine gui=bold guibg=Black guifg=White
+hi StatusLineNC gui=bold guibg=DarkGray guifg=White
 
 set expandtab
 set softtabstop=4
