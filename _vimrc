@@ -35,6 +35,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 set laststatus=2
+set statusline=[%n]\ %f\ %y%m%r%h%w%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-20.([%l,%c%V]\ [%L,%p%%]%)\ %P
+
+set expandtab
+set softtabstop=4
+set formatoptions-=t
 
 set pastetoggle=<F2>
 set cul
@@ -98,3 +103,14 @@ nmap x <Plug>MoveMotionPlug
 xmap x <Plug>MoveMotionXPlug
 nmap xx <Plug>MoveMotionLinePlug
 
+" Commands {{{1
+" From tpope .vimrc
+if has("eval")
+function! SL(function)
+    if exists('*'.a:function)
+        return call(a:function,[])
+    else
+        return ''
+    endif
+endfunction
+endif
