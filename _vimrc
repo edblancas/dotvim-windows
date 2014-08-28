@@ -27,6 +27,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,13 +60,11 @@ set vb t_vb=
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
 
-set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w\ %{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
-hi StatusLine gui=bold guibg=Black guifg=White
-hi StatusLineNC gui=bold guibg=DarkGray guifg=White
-
 " Color Scheme
 colorscheme Tomorrow
+
+set laststatus=2
+set statusline=[%n]\ %f\ %m%y%r%h%w\ %{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 
 " Para que inicie el pwd en ~
 cd ~

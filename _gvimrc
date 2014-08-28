@@ -7,3 +7,6 @@ set lines=999
 set columns=9999
 
 set guifont=Consolas:h11
+
+"hi StatusLine gui=bold guibg=Black guifg=White
+"hi StatusLineNC gui=bold guibg=DarkGray guifg=White
