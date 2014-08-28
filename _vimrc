@@ -35,6 +35,11 @@ filetype plugin indent on
 language messages en
 set showmode
 set hidden
+set foldmethod=syntax
+set smartindent
+set expandtab
+set softtabstop=4
+set formatoptions-=t
 set wildmode=list:longest,full
 set ignorecase
 set smartcase
@@ -44,20 +49,23 @@ set wrap
 set nobackup
 set nowritebackup
 set noswapfile
+set mouse=a
+set showmatch
+set cursorline
+set encoding=utf-8
+"set colorcolumn=100
+set vb t_vb=
+
+set pastetoggle=<F2>
+nnoremap <silent> <F2> :set invpaste paste?<CR>
+
 set laststatus=2
 set statusline=[%n]\ %f\ %m%y%r%h%w\ %{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 hi StatusLine gui=bold guibg=Black guifg=White
 hi StatusLineNC gui=bold guibg=DarkGray guifg=White
 
-set expandtab
-set softtabstop=4
-set formatoptions-=t
-
-set pastetoggle=<F2>
-nnoremap <silent> <F2> :set invpaste paste?<CR>
-set cursorline
-set encoding=utf-8
-"set colorcolumn=100
+" Color Scheme
+colorscheme Tomorrow
 
 " Para que inicie el pwd en ~
 cd ~
