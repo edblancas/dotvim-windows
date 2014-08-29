@@ -153,7 +153,7 @@ nmap xx <Plug>MoveMotionLinePlug
 if has("eval")
 function! SL(function)
     if exists('*'.a:function)
-        return call(a:function,[])
+        return ' '.call(a:function,[])
     else
         return ''
     endif
