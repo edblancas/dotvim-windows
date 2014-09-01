@@ -65,7 +65,7 @@ nnoremap <silent> <F2> :set invpaste paste?<CR>
 colorscheme Tomorrow
 
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
+set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
 
 
 " Para que inicie el pwd en ~
