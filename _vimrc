@@ -65,7 +65,7 @@ nnoremap <silent> <F2> :set invpaste paste?<CR>
 colorscheme Tomorrow
 
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
+set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
 
 
 " Para que inicie el pwd en ~
@@ -124,6 +124,8 @@ let g:ctrlp_map = ''
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['bookmarkdir']
 let g:ctrlp_working_path_mode = 0
+
+let g:ctrlp_match_window='max:30'
 
 " Tabular {{{2
 " Invoke by <leader>= alignment-character 
