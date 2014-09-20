@@ -55,8 +55,9 @@ set mouse=a
 set showmatch
 set cursorline
 set encoding=utf-8
-"set colorcolumn=100
+set colorcolumn=100
 set vb t_vb=
+set list
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
@@ -65,8 +66,7 @@ nnoremap <silent> <F2> :set invpaste paste?<CR>
 colorscheme Tomorrow
 
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
-
+set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 
 " Para que inicie el pwd en ~
 cd ~
