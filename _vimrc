@@ -16,12 +16,13 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'd11wtq/ctrlp_bdelete.vim'
 "Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
@@ -71,6 +72,9 @@ set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&
 
 " Para que inicie el pwd en ~
 cd ~
+
+" Para los .log
+au BufRead,BufNewFile *.log set filetype=text
 
 " Mappings {{{1
 " Override defaults {{{2
@@ -128,6 +132,8 @@ let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_match_window='max:30'
 
+call ctrlp_bdelete#init()
+
 " Tabular {{{2
 " Invoke by <leader>= alignment-character 
 nnoremap <silent> <leader>= :call g:Tabular(1)<CR> 
@@ -152,7 +158,7 @@ endfunction
 "nmap xx <Plug>MoveMotionLinePlug
 
 " ag & ack.vim {{{2
-let g:ackprg = 'C:\Users\jg70944\Documents\DAN\downloads\ag.exe --nogroup --nocolor --column'
+let g:ackprg = 'C:\Users\jg70944\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
