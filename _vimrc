@@ -19,9 +19,10 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
-Plugin 'svermeulen/vim-easyclip'
 Plugin 'godlygeek/tabular'
 Plugin 'chrisbra/NrrwRgn'
+Plugin 'mileszs/ack.vim'
+"Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
@@ -142,13 +143,19 @@ function! g:Tabular(ignore_range) range
 endfunction 
 
 " EasyClip {{{2
-nmap <silent> gs <plug>SubstituteOverMotionMap
-nmap gss <plug>SubstituteLine
-xmap gs p
-let g:EasyClipUseCutDefaults = 0
-nmap x <Plug>MoveMotionPlug
-xmap x <Plug>MoveMotionXPlug
-nmap xx <Plug>MoveMotionLinePlug
+"nmap <silent> gs <plug>SubstituteOverMotionMap
+"nmap gss <plug>SubstituteLine
+"xmap gs p
+"let g:EasyClipUseCutDefaults = 0
+"nmap x <Plug>MoveMotionPlug
+"xmap x <Plug>MoveMotionXPlug
+"nmap xx <Plug>MoveMotionLinePlug
+
+" ag & ack.vim {{{2
+let g:ackprg = 'C:\Users\jg70944\Documents\DAN\downloads\ag.exe --nogroup --nocolor --column'
+nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
+nnoremap \ :AckWindow!<Space>
+nnoremap <Leader>a :Ack<Space>
 
 " Commands {{{1
 " From tpope .vimrc
