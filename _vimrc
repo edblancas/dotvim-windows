@@ -23,6 +23,7 @@ Plugin 'chrisbra/NrrwRgn'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
+Plugin 'AutoComplPop'
 "Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
