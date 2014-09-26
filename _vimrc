@@ -23,7 +23,7 @@ Plugin 'chrisbra/NrrwRgn'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
-Plugin 'AutoComplPop'
+"Plugin 'AutoComplPop'
 "Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
@@ -64,6 +64,8 @@ set list
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
+" Para siempre copiar del unnamed al * y viceversa
+set clipboard=unnamed
 
 " Color Scheme
 colorscheme Tomorrow
