@@ -85,7 +85,7 @@ let mapleader = ","
 nnoremap Q <Nop>
 nnoremap <space> za
 nnoremap j gj
-nnoremap k gkkj
+nnoremap k gk
 
 " File opening {{{2
 cnoremap <expr> %% getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
