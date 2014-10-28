@@ -23,6 +23,7 @@ Plugin 'chrisbra/NrrwRgn'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
+Plugin 'derekwyatt/vim-scala'
 "Plugin 'AutoComplPop'
 "Plugin 'svermeulen/vim-easyclip'
 
@@ -102,12 +103,12 @@ map <Leader>h :hide<CR>
 
 " Visual line repeat {{{2 
 xnoremap . :normal .<CR> 
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR> 
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
  
-function! ExecuteMacroOverVisualRange() 
-  echo "@".getcmdline() 
-  execute ":'<,'>normal @".nr2char(getchar()) 
-endfunction 
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
 
 " Smash Escape {{{2
 inoremap jk <Esc>
