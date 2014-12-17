@@ -122,7 +122,7 @@ silent! nnoremap <unique> <silent> <Leader>p :CtrlP<CR>
 silent! nnoremap <unique> <silent> <Leader>b :CtrlPBuffer<CR>
 silent! nnoremap <unique> <silent> <Leader>T :CtrlPTag<CR>
 silent! nnoremap <unique> <silent> <Leader>t :CtrlPBufTag<CR>
-silent! nnoremap <unique> <silent> <Leader>m :CtrlPMRUFiles<CR>
+silent! nnoremap <unique> <silent> <Leader>r :CtrlPMRUFiles<CR>
 silent! nnoremap <unique> <silent> <Leader>o :CtrlPBookmarkDir<CR>
 let g:ctrlp_custom_ignore = {
 \ 'dir': '\.git$\|\.hg$\|\.svn$',
