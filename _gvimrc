@@ -2,6 +2,8 @@
 set guioptions-=rL
 " Sin toolbar
 set guioptions-=T
+" Sin menubar
+set guioptions-=m
 
 set lines=999
 set columns=9999

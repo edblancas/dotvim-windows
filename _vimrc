@@ -61,7 +61,7 @@ set cursorline
 set encoding=utf-8
 set colorcolumn=100
 set vb t_vb=
-set list
+set nolist
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
@@ -162,7 +162,7 @@ endfunction
 "nmap xx <Plug>MoveMotionLinePlug
 
 " ag & ack.vim {{{2
-let g:ackprg = 'C:\Users\jg70944\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
+let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
