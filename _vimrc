@@ -24,7 +24,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'derekwyatt/vim-scala'
-"Plugin 'AutoComplPop'
+Plugin 'AutoComplPop'
+Plugin 'ervandew/supertab'
 "Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
@@ -116,6 +117,7 @@ inoremap kj <Esc>
 inoremap JK <Esc>
 inoremap KJ <Esc>
 
+
 " Plugin Configuration {{{1
 " CtrlP {{{2
 silent! nnoremap <unique> <silent> <Leader>p :CtrlP<CR>
@@ -166,6 +168,11 @@ let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
+
+" SuperTab {{{ 2
+let g:SuperTabDefaultCompletitionType = '<c-n>'
+let g:SuperTabContextDefaultCompletitionType = '<c-n>'
+
 
 " Commands {{{1
 " From tpope .vimrc
