@@ -63,6 +63,7 @@ set encoding=utf-8
 set colorcolumn=100
 set vb t_vb=
 set nolist
+set listchars=tab:▸–,trail:·,nbsp:¬
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
