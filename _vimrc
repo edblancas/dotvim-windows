@@ -45,7 +45,7 @@ set hidden
 set foldmethod=syntax
 set smartindent
 set expandtab
-set softtabstop=4
+set tabstop=4 expandtab shiftwidth=4
 set formatoptions-=t
 set wildmode=list:longest,full
 set ignorecase
