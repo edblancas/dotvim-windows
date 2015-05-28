@@ -16,12 +16,17 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
-Plugin 'svermeulen/vim-easyclip'
 Plugin 'godlygeek/tabular'
 Plugin 'chrisbra/NrrwRgn'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'd11wtq/ctrlp_bdelete.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'AutoComplPop'
+Plugin 'ervandew/supertab'
+"Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
@@ -55,21 +60,26 @@ set mouse=a
 set showmatch
 set cursorline
 set encoding=utf-8
-"set colorcolumn=100
+set colorcolumn=100
 set vb t_vb=
+set nolist
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
+" Para siempre copiar del unnamed al * y viceversa
+set clipboard=unnamed
 
 " Color Scheme
 colorscheme Tomorrow
 
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}\ %=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P\  
-
+set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 
 " Para que inicie el pwd en ~
 cd ~
+
+" Para los .log
+au BufRead,BufNewFile *.log set filetype=text
 
 " Mappings {{{1
 " Override defaults {{{2
@@ -77,7 +87,7 @@ let mapleader = ","
 nnoremap Q <Nop>
 nnoremap <space> za
 nnoremap j gj
-nnoremap k gkkj
+nnoremap k gk
 
 " File opening {{{2
 cnoremap <expr> %% getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
@@ -94,12 +104,12 @@ map <Leader>h :hide<CR>
 
 " Visual line repeat {{{2 
 xnoremap . :normal .<CR> 
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR> 
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
  
-function! ExecuteMacroOverVisualRange() 
-  echo "@".getcmdline() 
-  execute ":'<,'>normal @".nr2char(getchar()) 
-endfunction 
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
 
 " Smash Escape {{{2
 inoremap jk <Esc>
@@ -107,13 +117,14 @@ inoremap kj <Esc>
 inoremap JK <Esc>
 inoremap KJ <Esc>
 
+
 " Plugin Configuration {{{1
 " CtrlP {{{2
 silent! nnoremap <unique> <silent> <Leader>p :CtrlP<CR>
 silent! nnoremap <unique> <silent> <Leader>b :CtrlPBuffer<CR>
 silent! nnoremap <unique> <silent> <Leader>T :CtrlPTag<CR>
 silent! nnoremap <unique> <silent> <Leader>t :CtrlPBufTag<CR>
-silent! nnoremap <unique> <silent> <Leader>m :CtrlPMRUFiles<CR>
+silent! nnoremap <unique> <silent> <Leader>r :CtrlPMRUFiles<CR>
 silent! nnoremap <unique> <silent> <Leader>o :CtrlPBookmarkDir<CR>
 let g:ctrlp_custom_ignore = {
 \ 'dir': '\.git$\|\.hg$\|\.svn$',
@@ -124,6 +135,10 @@ let g:ctrlp_map = ''
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['bookmarkdir']
 let g:ctrlp_working_path_mode = 0
+
+let g:ctrlp_match_window='max:30'
+
+call ctrlp_bdelete#init()
 
 " Tabular {{{2
 " Invoke by <leader>= alignment-character 
@@ -140,13 +155,24 @@ function! g:Tabular(ignore_range) range
 endfunction 
 
 " EasyClip {{{2
-nmap <silent> gs <plug>SubstituteOverMotionMap
-nmap gss <plug>SubstituteLine
-xmap gs p
-let g:EasyClipUseCutDefaults = 0
-nmap x <Plug>MoveMotionPlug
-xmap x <Plug>MoveMotionXPlug
-nmap xx <Plug>MoveMotionLinePlug
+"nmap <silent> gs <plug>SubstituteOverMotionMap
+"nmap gss <plug>SubstituteLine
+"xmap gs p
+"let g:EasyClipUseCutDefaults = 0
+"nmap x <Plug>MoveMotionPlug
+"xmap x <Plug>MoveMotionXPlug
+"nmap xx <Plug>MoveMotionLinePlug
+
+" ag & ack.vim {{{2
+let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
+nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
+nnoremap \ :AckWindow!<Space>
+nnoremap <Leader>a :Ack<Space>
+
+" SuperTab {{{ 2
+let g:SuperTabDefaultCompletitionType = '<c-n>'
+let g:SuperTabContextDefaultCompletitionType = '<c-n>'
+
 
 " Commands {{{1
 " From tpope .vimrc
