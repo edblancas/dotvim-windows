@@ -13,3 +13,7 @@ highlight Statement cterm=bold
 highlight MarkdownH1 cterm=bold
 highlight Error ctermfg=255
 highlight ErrorMsg ctermfg=255
+
+" Tweak for LineNr gutter
+highlight LineNr guibg=#efefef ctermbg=254
+highlight CursorLineNr guibg=#efefef ctermbg=254
