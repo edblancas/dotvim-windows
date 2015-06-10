@@ -82,6 +82,30 @@ cd ~
 " Para los .log
 au BufRead,BufNewFile *.log set filetype=text
 
+" Custom mappings and functions {{{2
+" Delete a word to the right
+imap <C-d> <C-o>diw
+
+" Override the read-only permissions
+cmap w!! %!sudo tee > /dev/null %
+
+" Copy the path of the actual file
+function! MeGetFilePath()
+    let @+ = expand("%:p")
+    let @* = expand("%:p")
+endfunction
+
+" Force yourself to stop using arrow keys
+noremap   <Up>     <Nop>
+noremap   <Down>   <Nop>
+noremap   <Left>   <Nop>
+noremap   <Right>  <Nop>
+inoremap  <Up>     <Nop>
+inoremap  <Down>   <Nop>
+inoremap  <Left>   <Nop>
+inoremap  <Right>  <Nop>
+
+
 " Mappings {{{1
 " Override defaults {{{2
 let mapleader = ","
