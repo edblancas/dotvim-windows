@@ -35,6 +35,8 @@ Plugin 'AfterColors.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'altercation/vim-colors-solarized'
 
+Plugin 'tpope/vim-flagship'
+
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -73,6 +75,8 @@ set clipboard=unnamed
 " Color Scheme
 colorscheme Tomorrow
 
+set showtabline=2
+set guioptions-=e
 set laststatus=2
 set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
 
