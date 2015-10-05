@@ -86,7 +86,13 @@ cd ~
 " Para los .log
 au BufRead,BufNewFile *.log set filetype=text
 
+" Para los markdown
+au BufRead,BufNewFile *.md,*.markdown set filetype=markdown
+
 " Custom mappings and functions {{{2
+" Save
+nnoremap <Leader>w :w<Enter>
+
 " Delete a word to the right
 imap <C-d> <C-o>diw
 
