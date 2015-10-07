@@ -17,6 +17,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'chrisbra/NrrwRgn'
@@ -30,6 +31,7 @@ Plugin 'ervandew/supertab'
 
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-function'
 
 Plugin 'AfterColors.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -154,6 +156,24 @@ inoremap KJ <Esc>
 
 
 " Plugin Configuration {{{1
+" ShowMarks {{{2
+let g:showmarks_auto_toggle = 0
+let g:showmarks_ignore_type = "h"
+
+" NerdTree {{{2
+map <Leader>l :NERDTreeToggle<CR>
+map <Leader>L :NERDTree<CR>
+map <leader>nt :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=2
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+
 " CtrlP {{{2
 silent! nnoremap <unique> <silent> <Leader>p :CtrlP<CR>
 silent! nnoremap <unique> <silent> <Leader>b :CtrlPBuffer<CR>
