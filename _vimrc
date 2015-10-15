@@ -68,6 +68,7 @@ set colorcolumn=100
 set vb t_vb=
 set nolist
 set listchars=tab:▸–,trail:·,nbsp:¬
+let mapleader = ","
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
@@ -120,7 +121,6 @@ inoremap  <Right>  <Nop>
 
 " Mappings {{{1
 " Override defaults {{{2
-let mapleader = ","
 nnoremap Q <Nop>
 nnoremap <space> za
 nnoremap j gj
