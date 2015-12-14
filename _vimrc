@@ -230,7 +230,7 @@ let g:SuperTabContextDefaultCompletitionType = '<c-n>'
 
 
 " Commands {{{1
-" From tpope .vimrc
+" From tpope .vimrc, para el statusline
 if has("eval")
 function! SL(function)
     if exists('*'.a:function)
