@@ -68,6 +68,7 @@ set vb t_vb=
 set nolist
 set listchars=tab:▸–,trail:·,nbsp:¬
 let mapleader = ","
+set scrolloff=3
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
