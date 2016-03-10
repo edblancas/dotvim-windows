@@ -43,3 +43,6 @@ function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" Para siempre copiar del unnamed al * y viceversa
+set clipboard=unnamed
