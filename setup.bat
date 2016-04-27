@@ -9,4 +9,4 @@ mklink /H %USERPROFILE%\_vimrc _vimrc
 :: Make symlink _gvimrc
 mklink /H %USERPROFILE%\_gvimrc _gvimrc
 :: Make symlink .ideavimrc
-mklink /H %USERPROFILE%\.ideavimrc _ideavimrc
+mklink /H %USERPROFILE%\.ideavimrc .ideavimrc
