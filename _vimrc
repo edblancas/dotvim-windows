@@ -44,7 +44,6 @@ call vundle#end()
 filetype plugin indent on
 " }}}
 
-language messages en
 set showmode
 set hidden
 set foldmethod=syntax
@@ -70,6 +69,7 @@ set vb t_vb=
 set nolist
 set listchars=tab:▸–,trail:·,nbsp:¬
 let mapleader = ","
+set scrolloff=3
 
 set pastetoggle=<F2>
 nnoremap <silent> <F2> :set invpaste paste?<CR>
@@ -77,7 +77,7 @@ nnoremap <silent> <F2> :set invpaste paste?<CR>
 set clipboard=unnamed
 
 " Color Scheme
-colorscheme Tomorrow
+colorscheme Tomorrow-Night-Eighties
 
 set showtabline=2
 set guioptions-=e
@@ -220,7 +220,8 @@ endfunction
 "nmap xx <Plug>MoveMotionLinePlug
 
 " ag & ack.vim {{{2
-let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
+""let g:ackprg = '/c/Users/dan/vimfiles/utils/ack-standalone.pl -s -H --nogroup --nocolor --column'
+let g:ackprg = 'C:\Users\dan\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
