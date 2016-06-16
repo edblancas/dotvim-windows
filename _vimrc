@@ -161,15 +161,15 @@ inoremap KJ <Esc>
 " Quit the defaul showing Vim GUI server name
 let g:tabprefix=''
 
-" For when reload the vimrc reload fugitive default in flagship
-call flagship#setup()
-
 " For not acumulate autocmds
 " http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
 augroup flagship_me
     autocmd!
-    autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+    autocmd User Flags call Hoist("window", "%{&ignorecase ? '[IC]' : ''}")
 augroup END
+
+" For when reload the vimrc reload fugitive default in flagship
+call flagship#setup()
 
 " ShowMarks {{{2
 let g:showmarks_auto_toggle = 0
