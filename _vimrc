@@ -38,6 +38,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'tpope/vim-flagship'
+Plugin 'bootleq/ShowMarks'
 
 call vundle#end()
 filetype plugin indent on
