@@ -82,7 +82,7 @@ colorscheme Tomorrow
 set showtabline=2
 set guioptions-=e
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w%{SL('fugitive#statusline')}%=%{&fenc==\"\"?&enc:&fenc}[%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %P
+set statusline=[%n]\ %f\ %m%y%r%h%w\ %=%-35.(%{&fenc==\"\"?&enc:&fenc}\ [%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %)%P
 
 " Para que inicie el pwd en ~
 cd ~
@@ -157,6 +157,20 @@ inoremap KJ <Esc>
 
 
 " Plugin Configuration {{{1
+" Flagship {{{2
+" Quit the defaul showing Vim GUI server name
+let g:tabprefix=''
+
+" For when reload the vimrc reload fugitive default in flagship
+call flagship#setup()
+
+" For not acumulate autocmds
+" http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+augroup flagship_me
+    autocmd!
+    autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+augroup END
+
 " ShowMarks {{{2
 let g:showmarks_auto_toggle = 0
 let g:showmarks_ignore_type = "h"
@@ -227,8 +241,6 @@ nnoremap <Leader>a :Ack<Space>
 
 " SuperTab {{{ 2
 let g:SuperTabDefaultCompletitionType = '<c-n>'
-let g:SuperTabContextDefaultCompletitionType = '<c-n>'
-
 
 " Commands {{{1
 " From tpope .vimrc, para el statusline
