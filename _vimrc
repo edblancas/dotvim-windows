@@ -165,7 +165,7 @@ let g:tabprefix=''
 " http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
 augroup flagship_me
     autocmd!
-    autocmd User Flags call Hoist("window", "%{&ignorecase ? '[IC]' : ''}")
+    autocmd User Flags call Hoist("buffer", "%{&ignorecase ? '[IC]' : ''}")
 augroup END
 
 " For when reload the vimrc reload fugitive default in flagship
