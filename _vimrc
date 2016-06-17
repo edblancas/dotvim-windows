@@ -44,6 +44,7 @@ call vundle#end()
 filetype plugin indent on
 " }}}
 
+language messages en
 set showmode
 set hidden
 set foldmethod=syntax
@@ -77,12 +78,12 @@ nnoremap <silent> <F2> :set invpaste paste?<CR>
 set clipboard=unnamed
 
 " Color Scheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow
 
 set showtabline=2
 set guioptions-=e
 set laststatus=2
-set statusline=[%n]\ %f\ %m%y%r%h%w\ %=%-35.(%{&fenc==\"\"?&enc:&fenc}\ [%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %)%P
+set statusline=[%n]\ %f\ %m%y%r%h%w%=%-35.(%{&fenc==\"\"?&enc:&fenc}\ [%{&ff}]\ [%L,%p%%]\ [%l,%c%V]\ %)%P
 
 " Para que inicie el pwd en ~
 cd ~
@@ -160,16 +161,7 @@ inoremap KJ <Esc>
 " Flagship {{{2
 " Quit the defaul showing Vim GUI server name
 let g:tabprefix=''
-
-" For not acumulate autocmds
-" http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
-augroup flagship_me
-    autocmd!
-    autocmd User Flags call Hoist("buffer", "%{&ignorecase ? '[IC]' : ''}")
-augroup END
-
-" For when reload the vimrc reload fugitive default in flagship
-call flagship#setup()
+autocmd User Flags call Hoist("buffer", "%{&ignorecase ? '[IC]' : ''}")
 
 " ShowMarks {{{2
 let g:showmarks_auto_toggle = 0
@@ -234,13 +226,14 @@ endfunction
 "nmap xx <Plug>MoveMotionLinePlug
 
 " ag & ack.vim {{{2
-let g:ackprg = 'C:\Users\dan\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
+let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
 
 " SuperTab {{{ 2
-let g:SuperTabDefaultCompletitionType = '<c-n>'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " Commands {{{1
 " From tpope .vimrc, para el statusline
