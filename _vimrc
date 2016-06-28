@@ -1,12 +1,6 @@
 " vim: nowrap fdm=marker
 
 " vim-plug config {{{1
-if empty(glob('~/vimfiles/autoload/plug.vim'))
-  silent !curl -fLo ~/vimfiles/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
 call plug#begin('~/vimfiles/plugged')
 
 Plug 'tpope/vim-fugitive'
