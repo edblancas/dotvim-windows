@@ -1,47 +1,45 @@
 " vim: nowrap fdm=marker
 
-" Vundle.vim config {{{1
-set nocompatible
-filetype off
+" vim-plug config {{{1
+if empty(glob('~/vimfiles/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-let path='~/vimfiles/bundle'
-call vundle#begin(path)
+call plug#begin('~/vimfiles/plugged')
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Raimondi/delimitMate'
+Plug 'godlygeek/tabular'
+Plug 'chrisbra/NrrwRgn'
+Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'd11wtq/ctrlp_bdelete.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'AutoComplPop'
+Plug 'ervandew/supertab'
+"Plug 'svermeulen/vim-easyclip'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Raimondi/delimitMate'
-Plugin 'godlygeek/tabular'
-Plugin 'chrisbra/NrrwRgn'
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'd11wtq/ctrlp_bdelete.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'AutoComplPop'
-Plugin 'ervandew/supertab'
-"Plugin 'svermeulen/vim-easyclip'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-function'
 
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-function'
+Plug 'AfterColors.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'altercation/vim-colors-solarized'
 
-Plugin 'AfterColors.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-flagship'
+Plug 'bootleq/ShowMarks'
 
-Plugin 'tpope/vim-flagship'
-Plugin 'bootleq/ShowMarks'
-
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 " }}}
 
 language messages en
