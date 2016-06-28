@@ -233,7 +233,7 @@ endfunction
 "nmap xx <Plug>MoveMotionLinePlug
 
 " ag & ack.vim {{{2
-let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nogroup --nocolor --column'
+let g:ackprg = 'C:\Users\eb75435\vimfiles\utils\ack -s -H --nopager --nogroup --nocolor --column'
 nnoremap K :AckWindow! "\b<C-R><C-W>\b"<CR>
 nnoremap \ :AckWindow!<Space>
 nnoremap <Leader>a :Ack<Space>
