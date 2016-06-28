@@ -1,2 +1,4 @@
 .netrwhist
 vimfiles/bundle
+vimfiles/autoload/
+vimfiles/plugged/
